@@ -24,9 +24,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_26_045446) do
   end
 
   create_table "meeting_participants", force: :cascade do |t|
-    t.integer "booking_id", null: false
     t.integer "user_id", null: false
-    t.string "status"
+    t.integer "booking_id", null: false
+    t.string "status", default: "pending", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_meeting_participants_on_booking_id"
